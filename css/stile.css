@@ -1,0 +1,169 @@
+@import url(font.css); /* importo il file css con le istruzioni per richiamare il file del carattere tipografico */
+
+body {
+    margin: 0 0;
+    background-color: #f5f5f5;
+    font-family: "Accademia", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+img {
+    max-width: 100%; /* per fare in modo che tutte le immagin si adattano all'elemento che le contiene */
+    display: block; /* per azzerare il margine sotto che le immagini hanno di default */
+}
+
+main, footer, .card-2 {
+    max-width: 1000px;
+    margin: auto; /* centro l'elemento nella pagina */
+    padding: 40px;
+}
+
+.card-2 {
+    display: flex; /* allineo in orizzontale gli elementi della card */
+    gap:20px;
+    background: #fff;
+    margin-bottom: 30px;
+}
+
+.card-2 .immagine {
+    width: 35%;
+}
+
+.card-2 .testo {
+    width: 65%;
+}
+
+.card-2 .testo h2, .card-2 .testo p {
+    margin: 10;
+}
+
+header a {
+    text-decoration: none;
+    color: #222;
+}
+
+header a:hover {
+    color: rgb(0, 47, 202);
+    text-decoration: underline;
+}
+
+header a.attivo {
+    font-weight: bold;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+header p {
+    margin: 0;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+header nav ul {
+    margin:0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+section.hero {
+    background:rgb(250, 133, 25);/* colore impostato con RGB e con la trasparenza, che si può notare sopratutto quando cambia il colore di sfondo */
+    text-align: center;
+}
+
+
+section.hero h1 {
+    margin: 0;
+    padding: 40px 10px;
+    font-size: 40px;
+    color: rgba(255,255,255,0.9);
+}
+
+.grid {
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    /* grid-template-columns: 1fr 1fr 1fr; */
+    gap: 20px;
+}
+
+main div.card {
+    background: #ffffff;
+    border-radius: 10px;
+}
+
+main div.card img {
+    border-radius: 10px 10px 0 0;
+    object-fit: cover;
+    height: 250px;
+    width: 100%;
+}
+
+main div img {
+    border-radius: 20px;
+}
+
+main div.card h2 {
+    margin: 0;
+    padding: 20px 20px 4px 20px;
+    font-size: 18px;
+}
+
+main div.card p {
+    margin: 0;
+    padding: 0 20px 20px 20px;
+    font-size: 14px;
+    line-height: 1.5; /* l'interlinea del testo */
+}
+
+main div.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap:20px;
+}
+
+footer {
+    text-align: center;
+    padding: 0;
+}
+
+footer p {
+    border-top:1px solid rgba(0,0,0,0.1);
+    margin: 0;
+    padding: 20px 0;
+    font-s 14px;
+    color:#444
+}
+
+@media (max-width: 600px) { /* se la finestra ha una larghezza minore di 800px, fai lo sfondo giallo */
+    body { 
+        background: rgb(255, 189, 67);
+    }
+    .card-2 {
+        flex-direction: column; /* nella versione mobile la card con gli elementi allineati in orizzontale diventa come la prima card, con gli elementi uno sotto l'altro */
+    }
+
+    .card-2 .testo {
+        width: 100%;
+    }
+
+    .card-2 .immagine {
+        width: 100%;
+    }
+}
+
+@media (max-width: 400px) { /* se la finestra ha una larghezza minore di 400px, fai lo sfondo verde. Questa istruzione sovrascrive la precedente, se la cancello lo sfondo sarà sempre giallo */
+    body {
+        background: rgb(255, 235, 147);
+    }
+
+    header {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
